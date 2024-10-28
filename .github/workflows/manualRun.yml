@@ -6,15 +6,15 @@ on:
       TEST_FILE:
         description: 'Select test files to run'
         required: true
-        default: 'blockRows'
+        default: 'MyFirstTest'
         type: choice
         options:
-          - blockRows
-          - LinearRows
+          - /TestCases/RowTypes/BlockRows/b1Rows
+          - /TestCases/RowTypes/LinearRows/chd1Rows
 
 jobs:
   run-suitest:
-    runs-on: ubuntu-latest
+    runs-on: qa-ubuntu-latest
 
     steps:
     - name: Checkout repository
