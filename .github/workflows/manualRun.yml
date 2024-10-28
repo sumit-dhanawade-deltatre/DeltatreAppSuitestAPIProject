@@ -14,7 +14,7 @@ on:
 
 jobs:
   run-suitest:
-    runs-on: qa-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
