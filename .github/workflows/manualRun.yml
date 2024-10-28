@@ -3,7 +3,7 @@ name: Manual Run
 on:
   workflow_dispatch:
     inputs:
-      TETS_FILE:
+      TEST_FILE_PATH:
         description: 'Select test files to run'
         required: true
         default: 'MyFirstTest'
@@ -35,4 +35,5 @@ jobs:
           --token-password ${{ secrets.SUITEST_TOKEN_PASSWORD }} \
           --app-config-id e068c84f-9d52-4f57-a6e4-16dc0fcb9ba9 \
           --device-id d740d673-34bb-4238-844d-985a8b7e0efa \
-          node ./${{ inputs.TETS_FILE }}.js
+          node /${{ inputs.TEST_FILE_PATH }}.js
+
