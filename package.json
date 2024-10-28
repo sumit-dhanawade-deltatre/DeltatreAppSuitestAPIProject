@@ -1,0 +1,23 @@
+{
+  "name": "deltatreappsuitestapiproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MyFirstTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumit-dhanawade-deltatre/DeltatreAppSuitestAPIProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumit-dhanawade-deltatre/DeltatreAppSuitestAPIProject/issues"
+  },
+  "homepage": "https://github.com/sumit-dhanawade-deltatre/DeltatreAppSuitestAPIProject#readme",
+  "dependencies": {
+    "suitest-js-api": "^3.12.1"
+  }
+}
