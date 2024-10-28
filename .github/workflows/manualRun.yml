@@ -9,8 +9,8 @@ on:
         default: 'MyFirstTest'
         type: choice
         options:
-          - /TestCases/RowTypes/BlockRows/b1Rows
-          - /TestCases/RowTypes/LinearRows/chd1Rows
+          - TestCases/RowTypes/BlockRows/b1Rows
+          - TestCases/RowTypes/LinearRows/chd1Rows
 
 jobs:
   run-suitest:
