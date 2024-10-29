@@ -23,11 +23,10 @@ jobs:
     - name: Install Suitest CLI globally
       run: npm install -g suitest-js-api  
 
-    - name: Run Suitest test
+    - name: Trigger Suitest test pack
       run: |
-        suitest run \
-          --token-id ${{ secrets.SUITEST_TOKEN_ID }} \
-          --token-password ${{ secrets.SUITEST_TOKEN_PASSWORD }} \
-          --app-config-id e068c84f-9d52-4f57-a6e4-16dc0fcb9ba9 \
-          --device-id d740d673-34bb-4238-844d-985a8b7e0efa \
-          node ./Regression.js    
+        curl -X POST https://the.suite.st/api/public/v4/test-packs/30983 \
+          -H 'Content-Type: application/json' \
+          -H 'X-TokenId: ${{ secrets.SUITEST_TOKEN_ID }}' \
+          -H 'X-TokenPassword: ${{ secrets.SUITEST_TOKEN_PASSWORD }}' \
+          -d '{"includeChangelist": false}'       
