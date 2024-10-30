@@ -1,8 +1,16 @@
-name: Suitest Run
+name: Schedule test pack Run
 
 on:
-  push:
   workflow_dispatch:
+    inputs:
+      TEST_PACK_ID:
+        description: 'Select test pack to run'
+        required: true
+        default: '30983'
+        type: choice
+        options:
+          - 30983
+          - 30984
 
 jobs:
   run-suitest:
@@ -12,20 +20,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Install Suitest CLI globally
-      run: npm install -g suitest-js-api  
-
     - name: Trigger Suitest test pack
       run: |
-        curl -X POST https://the.suite.st/api/public/v4/test-packs/30983 \
+        curl -X POST https://the.suite.st/api/public/v4/test-packs/${{ inputs.TEST_PACK_ID }} \
           -H 'Content-Type: application/json' \
           -H 'X-TokenId: ${{ secrets.SUITEST_TOKEN_ID }}' \
           -H 'X-TokenPassword: ${{ secrets.SUITEST_TOKEN_PASSWORD }}' \
