@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       TEST_PACK_ID:
-        description: 'Select test pack to run'
+        description: 'Select test pack'
         required: true
         default: '30983'
         type: choice

@@ -13,13 +13,13 @@ on:
           - TestCases/RowTypes/LinearRows/EPG1Rows
 
       DEVICE_ID:
-        description: 'Select device to run'
+        description: 'Select device - Make sure device is online'
         required: true
         default: 'd740d673-34bb-4238-844d-985a8b7e0efa'
         type: choice
         options:
           - d740d673-34bb-4238-844d-985a8b7e0efa
-          - 15b145ee-e8f4-4152-8abd-2fb0a57b246f   
+          - 15b145ee-e8f4-4152-8abd-2fb0a57b246f
 
 jobs:
   run-suitest:
