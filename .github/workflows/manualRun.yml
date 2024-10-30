@@ -19,7 +19,7 @@ on:
         type: choice
         options:
           - d740d673-34bb-4238-844d-985a8b7e0efa
-          - TestCases/RowTypes/LinearRows/CHD1Rows    
+          - 15b145ee-e8f4-4152-8abd-2fb0a57b246f   
 
 jobs:
   run-suitest:
