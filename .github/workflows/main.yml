@@ -30,4 +30,4 @@ jobs:
           --token-password ${{ secrets.SUITEST_TOKEN_PASSWORD }} \
           --app-config-id e068c84f-9d52-4f57-a6e4-16dc0fcb9ba9 \
           --device-id d740d673-34bb-4238-844d-985a8b7e0efa \
-          node ./Regression.js    
+          node ./TestCases/RowTypes/LinearRows/EPG1Rows.js  
