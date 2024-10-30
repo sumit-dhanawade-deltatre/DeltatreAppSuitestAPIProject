@@ -9,8 +9,17 @@ on:
         default: 'MyFirstTest'
         type: choice
         options:
-          - TestCases/RowTypes/LinearRows/chd1Rows
           - TestCases/RowTypes/LinearRows/CHD1Rows
+          - TestCases/RowTypes/LinearRows/EPG1Rows
+
+      DEVICE_ID:
+        description: 'Select device to run'
+        required: true
+        default: 'd740d673-34bb-4238-844d-985a8b7e0efa'
+        type: choice
+        options:
+          - d740d673-34bb-4238-844d-985a8b7e0efa
+          - TestCases/RowTypes/LinearRows/CHD1Rows    
 
 jobs:
   run-suitest:
@@ -37,6 +46,6 @@ jobs:
           --token-id ${{ secrets.SUITEST_TOKEN_ID }} \
           --token-password ${{ secrets.SUITEST_TOKEN_PASSWORD }} \
           --app-config-id e068c84f-9d52-4f57-a6e4-16dc0fcb9ba9 \
-          --device-id d740d673-34bb-4238-844d-985a8b7e0efa \
+          --device-id ${{ secrets.DEVICE_ID }} \
           node ./${{ inputs.TEST_FILE }}.js
 
